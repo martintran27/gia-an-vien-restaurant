@@ -7,5 +7,7 @@
 node_modules/
 *.log
 
-# Ảnh thô chưa xử lý (đặt tên ngẫu nhiên từ AI) — wire vào assets/dishes/ sau
+# Ảnh/asset thô chưa xử lý — đã wire vào assets/ (dishes, scenes, logo.png) rồi
 FOOD-IMAGE 3 MIỀN/
+Không gian nhà hàng/
+elements layers/

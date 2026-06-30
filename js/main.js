@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const D = window.GAV || {};
-  const EXT = ".png"; // đổi sang ".webp" khi bạn xuất ảnh webp
+  const EXT = ".webp";
   const dishImg = (slug) => `assets/dishes/${slug}${EXT}`;
   const fmtPrice = (n) => (n * 1000).toLocaleString("vi-VN") + "₫";
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -89,7 +89,8 @@
 
   function renderGallery() {
     const g = $("[data-gallery]"); if (!g) return;
-    g.innerHTML = Array.from({ length: 6 }, () => `<div class="cell reveal">Thư viện · art Figma</div>`).join("");
+    const imgs = ["hero.jpg", "kien-truc.jpg", "khong-gian.png", "bieu-dien.png", "gallery-1.jpg", "gallery-2.png"];
+    g.innerHTML = imgs.map((f) => `<div class="cell reveal"><img src="assets/scenes/${f}" alt="Không gian Gia An Viên" loading="lazy"/></div>`).join("");
   }
 
   function renderReserveOpts() {
