@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gia An Viên — Không gian Văn hoá · Nghệ thuật · Ẩm thực Việt</title>
+  <meta name="description" content="Gia An Viên — nhà hàng đồng thời là không gian văn hoá nghệ thuật Việt. Hành trình ẩm thực ba miền Bắc – Trung – Nam trong không gian sơn mài." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap&subset=vietnamese,latin" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- con trỏ tuỳ biến (desktop) -->
+  <div class="cursor" aria-hidden="true"></div>
+  <!-- sợi chỉ vàng "mở cuộn" -->
+  <div class="scroll-thread" aria-hidden="true"><span></span></div>
+
+  <!-- ░░ HEADER ░░ -->
+  <header class="site-header" id="top">
+    <div class="shell header-inner">
+      <a class="brand" href="#trang-chu" aria-label="Gia An Viên">
+        <span class="brand-seal" aria-hidden="true">家安園</span>
+        <span class="brand-name">Gia An Viên</span>
+      </a>
+      <nav class="nav" aria-label="Điều hướng chính" data-nav>
+        <a href="#trang-chu">Trang Chủ</a>
+        <a href="#thuc-don">Thực Đơn</a>
+        <a href="#triet-ly">Về Chúng Tôi</a>
+        <a href="#thu-vien">Thư Viện</a>
+        <a href="#dat-ban">Đặt Bàn</a>
+        <a href="#lien-he">Liên Hệ</a>
+      </nav>
+      <div class="header-actions">
+        <span class="lang"><b>VI</b><span>/</span>EN</span>
+        <a href="#dat-ban" class="btn btn-primary btn-sm">Đặt Bàn Ngay</a>
+        <button class="nav-toggle" aria-label="Mở menu" data-nav-toggle><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ░░ 1 · HERO ░░ -->
+    <section class="hero scene" id="trang-chu" aria-labelledby="hero-title">
+      <div class="scene-art" data-parallax data-speed="-0.12" aria-hidden="true"></div>
+      <span class="hanom" aria-hidden="true">家安園</span>
+      <div class="shell hero-inner">
+        <p class="kicker reveal">Ẩm thực · Văn hoá · Nghệ thuật Việt</p>
+        <h1 class="hero-title reveal" id="hero-title">
+          <span class="t-cream">GIA AN</span>
+          <span class="t-gold">VIÊN</span>
+        </h1>
+        <p class="hero-sub reveal">Một bức tranh cuộn dài của ẩm thực ba miền</p>
+        <p class="hero-place reveal"><em>nơi mỗi món ăn là một lát cắt nghệ thuật</em></p>
+        <p class="hero-body reveal">Bước vào Gia An Viên như mở một bức tranh cuộn — kiến trúc thuần Việt, ba gian Bắc – Trung – Nam, và hành trình ẩm thực được bày như một cuộc triển lãm.</p>
+        <div class="hero-cta reveal">
+          <a href="#dat-ban" class="btn btn-primary">Đặt Bàn Ngay</a>
+          <a href="#thuc-don" class="btn btn-ghost">Xem Thực Đơn</a>
+        </div>
+      </div>
+      <span class="scroll-cue" aria-hidden="true">Cuộn để mở tranh</span>
+    </section>
+
+    <!-- ░░ STATS ░░ -->
+    <section class="stats" aria-label="Số liệu">
+      <div class="shell stats-grid" data-stats></div>
+    </section>
+
+    <!-- ░░ 2 · TRIẾT LÝ ░░ -->
+    <section class="section philosophy" id="triet-ly" aria-labelledby="ph-title">
+      <div class="shell philosophy-inner">
+        <div class="ph-text">
+          <p class="kicker reveal">Triết lý — 壹</p>
+          <h2 class="section-title reveal" id="ph-title"><span class="t-cream">Câu chuyện</span> <span class="t-gold">của chúng tôi</span></h2>
+          <p class="lead reveal">Bám rễ truyền thống. Đam mê sáng tạo.</p>
+          <p class="reveal">Tại Gia An Viên, mỗi món ăn không chỉ là bữa cơm — đó là sự phản chiếu của lòng tôn kính với di sản ẩm thực Việt. Từ nguyên liệu tinh tế đến từng chi tiết nhỏ nhất, chúng tôi theo đuổi sự hoàn hảo để mang lại một trải nghiệm chính thống không nơi nào sánh được.</p>
+          <p class="seal reveal" aria-hidden="true">Bếp Trưởng · 印</p>
+        </div>
+        <div class="ph-ink scene-ph" data-parallax data-speed="0.08" aria-hidden="true"><span>loang mực · placeholder</span></div>
+      </div>
+    </section>
+
+    <!-- ░░ 3 · KIẾN TRÚC (placeholder cảnh) ░░ -->
+    <section class="section scene-block" id="kien-truc" aria-labelledby="kt-title">
+      <div class="scene-ph full" data-parallax data-speed="-0.06" aria-hidden="true"><span>Phông Kiến trúc &amp; Cảnh quan · thay bằng art Figma</span></div>
+      <div class="shell">
+        <p class="kicker reveal">Kiến trúc &amp; Cảnh quan — 貳</p>
+        <h2 class="section-title reveal" id="kt-title"><span class="t-cream">Kiến trúc</span> <span class="t-gold">thuần Việt</span></h2>
+        <p class="reveal narrow">Mái ngói, sân vườn, hồ nước — không gian được dựng như một bức sơn thuỷ, để thực khách bước vào là bước vào tranh.</p>
+      </div>
+    </section>
+
+    <!-- ░░ 5 · SIGNATURE ░░ -->
+    <section class="section signature" id="signature" aria-labelledby="sig-title">
+      <div class="shell signature-inner">
+        <div class="sig-head">
+          <p class="kicker reveal">Đặc trưng — 伍</p>
+          <h2 class="section-title reveal" id="sig-title"><span class="t-cream">Hành trình</span><br /><span class="t-gold">nghệ thuật ẩm thực</span></h2>
+          <p class="reveal">Những món "tiến vua" — yến sào, vi cá, hải sâm, cá tầm, chim trĩ — chế tác như tác phẩm.</p>
+          <a href="#thuc-don" class="link-gold reveal">Khám phá thực đơn →</a>
+        </div>
+        <div class="sig-stage">
+          <div class="sig-ring" data-sig-stage></div>
+          <div class="sig-dots" data-sig-dots></div>
+        </div>
+        <ul class="sig-points" data-sig-points></ul>
+      </div>
+    </section>
+
+    <!-- ░░ 4 · MENU BA MIỀN ░░ -->
+    <section class="section menu" id="thuc-don" aria-labelledby="menu-title">
+      <div class="shell">
+        <div class="menu-head">
+          <p class="kicker reveal">Thực đơn — 肆</p>
+          <h2 class="section-title reveal" id="menu-title"><span class="t-cream">Hành trình</span> <span class="t-gold">ẩm thực ba miền</span></h2>
+          <p class="reveal narrow">Từ Nam ngược ra Bắc — mỗi miền một lát cắt của bức tranh vị giác.</p>
+        </div>
+        <div class="menu-tabs" role="tablist" data-menu-tabs></div>
+        <div class="menu-body">
+          <ul class="menu-list" data-menu-list></ul>
+          <aside class="menu-feature" data-menu-feature></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ 6 · KHÔNG GIAN 3 KHU (placeholder) ░░ -->
+    <section class="section scene-block" id="khong-gian" aria-labelledby="kg-title">
+      <div class="scene-ph full" data-parallax data-speed="0.06" aria-hidden="true"><span>Phông 3 gian Bắc – Trung – Nam · thay bằng art Figma</span></div>
+      <div class="shell">
+        <p class="kicker reveal">Không gian — 陸</p>
+        <h2 class="section-title reveal" id="kg-title"><span class="t-cream">Ba gian</span> <span class="t-gold">Bắc · Trung · Nam</span></h2>
+        <p class="reveal narrow">Ba không gian, ba bản sắc — mỗi gian một câu chuyện vùng miền.</p>
+      </div>
+    </section>
+
+    <!-- ░░ 7 · BIỂU DIỄN (placeholder) ░░ -->
+    <section class="section scene-block night" id="bieu-dien" aria-labelledby="bd-title">
+      <div class="scene-ph full" data-parallax data-speed="-0.05" aria-hidden="true"><span>Phông Biểu diễn nghệ thuật · thay bằng art Figma</span></div>
+      <div class="shell">
+        <p class="kicker reveal">Đêm diễn — 柒</p>
+        <h2 class="section-title reveal" id="bd-title"><span class="t-cream">Biểu diễn</span> <span class="t-gold">nghệ thuật truyền thống</span></h2>
+        <p class="reveal narrow">Đàn bầu, đàn tranh, ca trù — âm sắc dân tộc dưới ánh đèn vàng.</p>
+      </div>
+    </section>
+
+    <!-- ░░ VÌ SAO CHỌN ░░ -->
+    <section class="section why" aria-labelledby="why-title">
+      <div class="shell">
+        <div class="why-head">
+          <p class="kicker reveal">Vì sao chọn</p>
+          <h2 class="section-title reveal" id="why-title"><span class="t-cream">Vì sao chọn</span> <span class="t-gold">Gia An Viên</span></h2>
+          <p class="reveal narrow">Chúng tôi không chỉ phục vụ món ăn — chúng tôi tạo nên những trải nghiệm bám rễ truyền thống, nâng tầm bằng đam mê.</p>
+        </div>
+        <div class="bento" data-why></div>
+      </div>
+    </section>
+
+    <!-- ░░ REVIEWS ░░ -->
+    <section class="section reviews" aria-labelledby="rv-title">
+      <div class="shell">
+        <div class="rv-head">
+          <p class="kicker reveal">Đánh giá</p>
+          <h2 class="section-title reveal" id="rv-title"><span class="t-cream">Lời khen</span> <span class="t-gold">ngợi</span></h2>
+        </div>
+        <div class="rv-track" data-reviews></div>
+      </div>
+    </section>
+
+    <!-- ░░ 8 · SỰ KIỆN (placeholder) ░░ -->
+    <section class="section events" id="su-kien" aria-labelledby="sk-title">
+      <div class="shell">
+        <p class="kicker reveal">Sự kiện &amp; Workshop — 捌</p>
+        <h2 class="section-title reveal" id="sk-title"><span class="t-cream">Lịch</span> <span class="t-gold">sự kiện &amp; workshop</span></h2>
+        <ul class="events-list" data-events></ul>
+      </div>
+    </section>
+
+    <!-- ░░ 9 · THƯ VIỆN (placeholder) ░░ -->
+    <section class="section scene-block" id="thu-vien" aria-labelledby="tv-title">
+      <div class="shell">
+        <p class="kicker reveal">Thư viện — 玖</p>
+        <h2 class="section-title reveal" id="tv-title"><span class="t-cream">Thư viện</span> <span class="t-gold">hình ảnh</span></h2>
+      </div>
+      <div class="gallery" data-gallery aria-label="Thư viện hình ảnh"></div>
+    </section>
+
+    <!-- ░░ 10 · ĐẶT BÀN ░░ -->
+    <section class="section reserve" id="dat-ban" aria-labelledby="rs-title">
+      <div class="shell reserve-inner">
+        <div class="reserve-copy">
+          <p class="kicker reveal">Đặt chỗ — 拾</p>
+          <h2 class="section-title reveal" id="rs-title"><span class="t-cream">Đặt chỗ cho</span> <span class="t-son">buổi tối</span> <span class="t-cream">không thể quên</span></h2>
+          <p class="reveal narrow">Dù là bữa tối riêng tư hay tiệc sự kiện — đội ngũ Gia An Viên chăm chút từng chi tiết.</p>
+          <ul class="reserve-opts" data-reserve-opts></ul>
+        </div>
+        <form class="reserve-form reveal" data-reserve-form novalidate>
+          <div class="field"><label for="r-name">Họ tên</label><input id="r-name" name="name" type="text" required autocomplete="name" /></div>
+          <div class="field"><label for="r-phone">Số điện thoại</label><input id="r-phone" name="phone" type="tel" required autocomplete="tel" /></div>
+          <div class="row">
+            <div class="field"><label for="r-date">Ngày</label><input id="r-date" name="date" type="date" required /></div>
+            <div class="field"><label for="r-time">Giờ</label><input id="r-time" name="time" type="time" required /></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="r-guests">Số khách</label><input id="r-guests" name="guests" type="number" min="1" max="50" value="2" required /></div>
+            <div class="field"><label for="r-area">Khu</label>
+              <select id="r-area" name="area">
+                <option>Gian Bắc</option><option>Gian Trung</option><option>Gian Nam</option><option>Sân vườn</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="r-note">Ghi chú</label><textarea id="r-note" name="note" rows="2"></textarea></div>
+          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn btn-primary btn-block">Gửi yêu cầu đặt bàn</button>
+          <p class="form-msg" data-form-msg role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ░░ FAQ ░░ -->
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="shell faq-inner">
+        <div class="faq-head">
+          <p class="kicker reveal">Câu hỏi</p>
+          <h2 class="section-title reveal" id="faq-title"><span class="t-cream">Các câu hỏi</span> <span class="t-son">thường gặp</span></h2>
+          <p class="reveal narrow">Không tìm thấy câu trả lời? Đội ngũ luôn sẵn sàng hỗ trợ.</p>
+          <a href="#lien-he" class="link-gold reveal">Liên hệ ngay →</a>
+        </div>
+        <div class="faq-list" data-faq></div>
+      </div>
+    </section>
+
+    <!-- ░░ LIÊN HỆ ░░ -->
+    <section class="section contact" id="lien-he" aria-labelledby="ct-title">
+      <div class="shell contact-inner">
+        <div class="contact-copy">
+          <p class="kicker reveal">Liên hệ</p>
+          <h2 class="section-title reveal" id="ct-title"><span class="t-cream">Tìm chúng tôi</span></h2>
+          <p class="reveal narrow">Toạ lạc tại trung tâm thành phố — Gia An Viên mở ra một không gian thuần Việt giữa nhịp sống hiện đại.</p>
+          <a href="#dat-ban" class="btn btn-ghost reveal">Đặt Bàn Ngay</a>
+        </div>
+        <div class="contact-info" data-contact></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-brand">
+        <span class="brand-seal" aria-hidden="true">家安園</span>
+        <p class="brand-name">Gia An Viên</p>
+        <p class="muted">Không gian văn hoá – nghệ thuật – ẩm thực Việt.</p>
+      </div>
+      <nav class="footer-col" aria-label="Liên kết">
+        <h3>Liên kết</h3>
+        <a href="#trang-chu">Trang Chủ</a><a href="#thuc-don">Thực Đơn</a><a href="#triet-ly">Về Chúng Tôi</a><a href="#thu-vien">Thư Viện</a><a href="#dat-ban">Đặt Bàn</a>
+      </nav>
+      <div class="footer-col" data-footer-hours></div>
+      <div class="footer-col" data-footer-contact></div>
+    </div>
+    <div class="shell footer-base"><span>© <span data-year></span> Gia An Viên</span><span class="muted">Thiết kế bởi bản sắc Việt</span></div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

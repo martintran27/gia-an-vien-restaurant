@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+**/.DS_Store
+
+# Local tooling / dev
+.claude/
+node_modules/
+*.log
+
+# Ảnh thô chưa xử lý (đặt tên ngẫu nhiên từ AI) — wire vào assets/dishes/ sau
+FOOD-IMAGE 3 MIỀN/
