@@ -13,7 +13,26 @@
   /* ---------- RENDER ---------- */
   function renderStats() {
     const g = $("[data-stats]"); if (!g) return;
-    g.innerHTML = (D.stats || []).map((s) => `<div class="stat reveal"><b>${s.n}</b><span>${s.l}</span></div>`).join("");
+    g.innerHTML = (D.stats || []).map((s) => `<div class="stat reveal"><b data-count="${s.n}">${s.n}</b><span>${s.l}</span></div>`).join("");
+    if (reduce) return; // số đứng yên khi người dùng tắt animation
+    const parse = (raw) => { const m = String(raw).match(/^(\d+(?:\.\d+)?)(.*)$/); return m ? { t: parseFloat(m[1]), d: (m[1].split(".")[1] || "").length, s: m[2] } : null; };
+    const fmt = (v, p) => v.toFixed(p.d) + p.s;
+    const nums = g.querySelectorAll("b[data-count]");
+    nums.forEach((b) => { const p = parse(b.dataset.count); if (p) b.textContent = fmt(0, p); });
+    const obs = new IntersectionObserver((es) => {
+      es.forEach((e) => {
+        if (!e.isIntersecting) return;
+        obs.unobserve(e.target);
+        const b = e.target, p = parse(b.dataset.count); if (!p) return;
+        const dur = 1400, t0 = performance.now();
+        (function tick(now) {
+          const k = Math.min((now - t0) / dur, 1), eo = 1 - Math.pow(1 - k, 3); // easeOutCubic
+          b.textContent = fmt(p.t * eo, p);
+          if (k < 1) requestAnimationFrame(tick);
+        })(performance.now());
+      });
+    }, { threshold: 0.5 });
+    nums.forEach((b) => obs.observe(b));
   }
 
   function renderSignature() {
@@ -25,6 +44,7 @@
     const img = stage.querySelector("img"), cap = stage.querySelector(".sig-cap");
     dots.innerHTML = items.map((_, i) => `<button role="tab" aria-selected="${i === 0}" aria-label="Món ${i + 1}"></button>`).join("");
     const btns = [...dots.children];
+    const prevBtn = $("[data-sig-prev]"), nextBtn = $("[data-sig-next]");
     let i = 0, timer;
     const go = (n) => {
       i = (n + items.length) % items.length;
@@ -35,18 +55,32 @@
       }, 300);
       btns.forEach((b, k) => b.setAttribute("aria-selected", k === i));
     };
-    btns.forEach((b, k) => b.addEventListener("click", () => { go(k); restart(); }));
     const restart = () => { if (reduce) return; clearInterval(timer); timer = setInterval(() => go(i + 1), 3800); };
+    btns.forEach((b, k) => b.addEventListener("click", () => { go(k); restart(); }));
+    if (prevBtn) prevBtn.addEventListener("click", () => { go(i - 1); restart(); });
+    if (nextBtn) nextBtn.addEventListener("click", () => { go(i + 1); restart(); });
     restart();
   }
+
+  const TASTE_DIM = ["Hương vị tổng thể", "Độ tinh tế", "Độ đậm đà", "Cách trình bày"];
+  // hồ sơ vị giác (biên tập, không phải số đo): món signature/cao cấp được đánh giá cao hơn
+  const tasteProfile = (d) => d.badge === "signature" ? [5, 5, 5, 5] : d.badge ? [5, 4, 5, 5] : d.price >= 300 ? [5, 4, 5, 4] : [4, 4, 5, 5];
+  const stars = (n) => `<span class="on">${"★".repeat(n)}</span>${"★".repeat(5 - n)}`;
 
   function renderMenu() {
     const tabs = $("[data-menu-tabs]"), list = $("[data-menu-list]"), feat = $("[data-menu-feature]");
     const regions = D.regions || []; if (!tabs || !regions.length) return;
     tabs.innerHTML = regions.map((r, i) => `<button role="tab" aria-selected="${i === 0}" data-region="${i}">${r.label}</button>`).join("");
+    const markFeature = (li) => { list.querySelectorAll(".dish.is-feature").forEach((x) => x.classList.remove("is-feature")); if (li) li.classList.add("is-feature"); };
     const setFeature = (dish) => {
-      feat.innerHTML = `<img class="feat-img" src="${dishImg(dish.slug)}" alt="${dish.name}" ${onImgErr}/>
-        <h4>${dish.name}</h4><p>${dish.desc}</p><div class="price">${fmtPrice(dish.price)}</div>`;
+      const pr = tasteProfile(dish);
+      feat.innerHTML = `
+        <div class="feat-media"><img class="feat-img" src="${dishImg(dish.slug)}" alt="${dish.name}" ${onImgErr}/><span class="feat-mark" aria-hidden="true">❖</span></div>
+        <span class="feat-label">Món đặc biệt của đầu bếp</span>
+        <h4 class="feat-name">${dish.name}</h4>
+        <p class="feat-desc">${dish.desc}</p>
+        <ul class="feat-taste">${TASTE_DIM.map((dm, i) => `<li><span>${dm}</span><b class="stars">${stars(pr[i])}</b></li>`).join("")}</ul>
+        <div class="feat-foot"><span class="price">${fmtPrice(dish.price)}</span><a href="#dat-ban" class="btn btn-primary btn-sm">Đặt bàn để thưởng thức</a></div>`;
     };
     const showRegion = (idx) => {
       const r = regions[idx];
@@ -56,11 +90,12 @@
           <div><h4>${d.name}${d.badge ? `<span class="badge">${d.badge}</span>` : ""}</h4><p>${d.desc}</p></div>
           <div class="price">${fmtPrice(d.price)}</div>
         </li>`).join("");
-      list.querySelectorAll(".dish").forEach((li) => li.addEventListener("mouseenter", () => {
-        const [a, b] = li.dataset.dish.split("-"); setFeature(regions[a].dishes[b]);
+      const lis = [...list.querySelectorAll(".dish")];
+      lis.forEach((li) => li.addEventListener("mouseenter", () => {
+        const [a, b] = li.dataset.dish.split("-"); setFeature(regions[a].dishes[b]); markFeature(li);
       }));
       [...tabs.children].forEach((b, k) => b.setAttribute("aria-selected", k === idx));
-      setFeature(r.dishes[0]);
+      setFeature(r.dishes[0]); markFeature(lis[0]);
       observeReveals(list);
     };
     [...tabs.children].forEach((b, k) => b.addEventListener("click", () => showRegion(k)));
@@ -74,10 +109,12 @@
 
   function renderReviews() {
     const t = $("[data-reviews]"); if (!t) return;
-    t.innerHTML = (D.reviews || []).map((r) => `
-      <div class="rv-card reveal"><div class="stars">${"★".repeat(r.stars)}</div>
+    const card = (r) => `<div class="rv-card"><div class="stars">${"★".repeat(r.stars)}</div>
       <blockquote>“${r.quote}”</blockquote>
-      <div class="who"><b>${r.name}</b><span>${r.place}</span></div></div>`).join("");
+      <div class="who"><b>${r.name}</b><span>${r.place}</span></div></div>`;
+    const set = (D.reviews || []).map(card).join("");
+    // 2 bản giống nhau để marquee chạy vô tận liền mạch (bản sau ẩn với screen-reader)
+    t.innerHTML = `<div class="rv-marquee"><div class="rv-set">${set}</div><div class="rv-set" aria-hidden="true">${set}</div></div>`;
   }
 
   function renderEvents() {

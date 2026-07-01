@@ -24,7 +24,7 @@ window.GAV = {
   /* §4 — thực đơn theo nhóm/miền */
   regions: [
     { id: "dac-trung", label: "Đặc trưng", dishes: [
-      { name: "Súp Vi Cá Yến Sào Tiến Vua", price: 550, slug: "sup-vi-ca", badge: "signature", desc: "Súp ngự cao cấp, yến sào — vi cá trong nước dùng vàng óng." },
+      { name: "Súp Vi Cá Yến Sào Tiến Vua", price: 550, slug: "sup-vi-ca", badge: "signature", desc: "Súp ngự cao cấp, yến sào và vi cá trong nước dùng vàng óng." },
       { name: "Lẩu Chim Trĩ Nấm Tràm", price: 495, slug: "lau-chim-tri", badge: "signature", desc: "Chim trĩ hầm cùng nấm tràm, hương rừng đậm đà." },
       { name: "Cá Tầm Nướng Rừng Tràm", price: 485, slug: "ca-tam-nuong", desc: "Cá tầm nướng riu, lớp da vàng giòn, thơm thảo mộc." },
       { name: "Hải Sâm Xào Nấm Đông Cô", price: 385, slug: "hai-sam-xao", desc: "Hải sâm sốt nâu bóng, nấm đông cô, cải ngọt." },
@@ -32,7 +32,7 @@ window.GAV = {
       { name: "Tráng Miệng Ngọc Lục Bảo", price: 145, slug: "trang-mieng-ngoc-luc-bao", desc: "Thạch ngọc bích, hạt sen, điểm vàng tinh tế." },
     ]},
     { id: "bac", label: "Miền Bắc", dishes: [
-      { name: "Chả Cá Lăng Lã Vọng", price: 345, slug: "cha-ca-lang", badge: "đầu bếp khuyên dùng", desc: "Cá lăng nghệ vàng, thì là, hành — sôi trên chảo gang." },
+      { name: "Chả Cá Lăng Lã Vọng", price: 345, slug: "cha-ca-lang", badge: "đầu bếp khuyên dùng", desc: "Cá lăng nghệ vàng, thì là, hành, sôi trên chảo gang." },
       { name: "Nem Cua Bể Hoàng Gia", price: 225, slug: "nem-cua-be", desc: "Nem cua bể vàng giòn, nhân đầy đặn." },
       { name: "Bún Chả Kinh Kỳ", price: 145, slug: "bun-cha", desc: "Chả nướng than hoa, nước chấm chuẩn Hà thành." },
       { name: "Thịt Lợn Nướng Lá Mắc Mật", price: 265, slug: "thit-lon-mac-mat", desc: "Ba chỉ nướng lá mắc mật, da giòn thơm." },
@@ -65,14 +65,14 @@ window.GAV = {
   why: [
     { ic: "❀", h: "Tinh hoa nghề bếp", p: "Mỗi món là một tác phẩm, qua bàn tay nghệ nhân nhiều năm." },
     { ic: "◈", h: "Nguyên liệu thượng hạng", p: "Tuyển chọn từ những vùng nguyên liệu danh tiếng." },
-    { ic: "卍", h: "Trải nghiệm chính thống", p: "Hương vị Việt nguyên bản, không pha tạp." },
+    { ic: "❖", h: "Trải nghiệm chính thống", p: "Hương vị Việt nguyên bản, không pha tạp." },
     { ic: "☾", h: "Không gian tĩnh tại", p: "Thiết kế cho sự riêng tư và an nhiên." },
-    { ic: "酒", h: "Kết hợp tinh tế", p: "Thực đơn rượu trà tuyển chọn theo từng món." },
+    { ic: "❧", h: "Kết hợp tinh tế", p: "Thực đơn rượu trà tuyển chọn theo từng món." },
     { ic: "✦", h: "Phục vụ tận tâm", p: "Chăm chút từng chi tiết của buổi tối của bạn." },
   ],
 
   reviews: [
-    { stars: 5, quote: "Một trải nghiệm vượt cả mong đợi — từ không gian đến từng món ăn.", name: "Michael Chen", place: "Singapore · 2025" },
+    { stars: 5, quote: "Một trải nghiệm vượt cả mong đợi, từ không gian đến từng món ăn.", name: "Michael Chen", place: "Singapore · 2025" },
     { stars: 5, quote: "Hương vị ba miền được kể như một câu chuyện. Tinh tế đến từng chi tiết.", name: "Lê Văn Quốc Minh", place: "Hà Nội · 2025" },
     { stars: 5, quote: "Như bước vào một bảo tàng ẩm thực. Sẽ quay lại.", name: "Emma Yamamoto", place: "Tokyo · 2025" },
     { stars: 5, quote: "Sang trọng mà vẫn đậm hồn Việt. Đáng từng đồng.", name: "Võ Thị Hồng Nhung", place: "Đà Nẵng · 2025" },
@@ -88,7 +88,7 @@ window.GAV = {
     address: "Trung tâm thành phố (cập nhật địa chỉ)",
     phone: "+84 (0) 000 000 000",
     email: "datban@giaanvien.vn",
-    hours: ["Thứ 2 – Thứ 6: 11:00 – 22:00", "Thứ 7 – CN: 10:30 – 23:00"],
+    hours: ["Thứ 2 - Thứ 6: 11:00 - 22:00", "Thứ 7 - CN: 10:30 - 23:00"],
     social: ["Facebook", "Instagram", "Zalo"],
   },
 };

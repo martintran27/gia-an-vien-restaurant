@@ -4,6 +4,8 @@
 
 # Local tooling / dev
 .claude/
+.agents/
+skills-lock.json
 node_modules/
 *.log
 
