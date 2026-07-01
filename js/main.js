@@ -91,9 +91,17 @@
           <div class="price">${fmtPrice(d.price)}</div>
         </li>`).join("");
       const lis = [...list.querySelectorAll(".dish")];
-      lis.forEach((li) => li.addEventListener("mouseenter", () => {
-        const [a, b] = li.dataset.dish.split("-"); setFeature(regions[a].dishes[b]); markFeature(li);
-      }));
+      const isTouch = matchMedia("(hover:none)").matches;
+      lis.forEach((li) => {
+        const activate = () => {
+          const [a, b] = li.dataset.dish.split("-"); setFeature(regions[a].dishes[b]); markFeature(li);
+        };
+        li.addEventListener("mouseenter", activate); // desktop: rê chuột
+        li.addEventListener("click", () => {         // mobile/desktop: chạm/bấm
+          activate();
+          if (isTouch) feat.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+        });
+      });
       [...tabs.children].forEach((b, k) => b.setAttribute("aria-selected", k === idx));
       setFeature(r.dishes[0]); markFeature(lis[0]);
       observeReveals(list);
